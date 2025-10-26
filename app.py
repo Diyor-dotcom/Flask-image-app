@@ -6,11 +6,11 @@ from model_actions import predict_image
 app = Flask(__name__)
 app.config['UPLOAD_FOLDER'] = r'static/uploads'
 
-@app.route('/',methods = ['GET'])
+@app.route('/',methods = ['GET','POST'])
 def home():
     return render_template('index.html')
 
-@app.route('/result', methods = ['POST'])
+@app.route('/result', methods = ['POST','GET'])
 def result():
     if request.method == 'POST':
         
