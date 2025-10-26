@@ -1,9 +1,11 @@
-from tensorflow import keras
-import cv2
-import numpy as np
-model = keras.models.load_model('model_cifar10.h5')
 
 def predict_image(image_path):
+    from tensorflow import keras
+    import cv2
+    import numpy as np
+    
+    model = keras.models.load_model('model_cifar10.h5')
+
     img = cv2.imread(image_path)
     img = cv2.resize(img, (32,32))
     img = img.astype('float32') / 255
